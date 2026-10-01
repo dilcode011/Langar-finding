@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 90 50% 16%;
+    --card: 0 0% 100%;
+    --card-foreground: 90 50% 16%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 90 50% 16%;
+    --primary: 90 52% 23%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 75 30% 96%;
+    --secondary-foreground: 90 50% 16%;
+    --muted: 75 20% 96%;
+    --muted-foreground: 90 10% 40%;
+    --accent: 72 62% 50%;
+    --accent-foreground: 90 52% 23%;
+    --destructive: 0 72% 56%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 75 15% 90%;
+    --input: 75 15% 90%;
+    --ring: 90 52% 23%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    letter-spacing: -0.011em;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.035em;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out;
+  }
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out;
+  }
+  .animate-scale-in {
+    animation: scale-in 0.2s ease-out;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(75 20% 96%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(90 50% 16% / 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(90 50% 16% / 0.35);
+}
+
+/* ============================================================
+   MOBILE HOME — Langar Finder clean green aesthetic
+   ============================================================ */
+.mobile-home {
+  background: linear-gradient(180deg, #f7faf0 0%, #ffffff 40%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-home__glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+.mobile-home__glow--one {
+  top: -80px;
+  right: -60px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(161,203,53,0.25) 0%, transparent 70%);
+}
+.mobile-home__glow--two {
+  top: 320px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(45,90,30,0.06) 0%, transparent 70%);
+}
+
+.mobile-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #2D5A1E;
+}
+
+.mobile-section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #5a7a3a;
+}
+
+.mobile-see-all {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2D5A1E;
+}
+
+.mobile-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2D5A1E, #3a6e2a);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(45,90,30,0.15);
+}
+
+.mobile-icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 44px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.8);
+  color: #2D5A1E;
+  border: 1px solid #e2e8d4;
+  backdrop-filter: blur(8px);
+}
+
+.mobile-search {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Featured card */
+.mobile-feature-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8d4;
+  box-shadow: 0 2px 8px rgba(45,90,30,0.06);
+  transition: transform 0.2s ease;
+}
+.mobile-feature-card:active {
+  transform: scale(0.98);
+}
+
+.mobile-date-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  height: 64px;
+  border-radius: 12px;
+  background: linear-gradient(160deg, #2D5A1E, #3a6e2a);
+  color: white;
+  flex-shrink: 0;
+}
+.mobile-date-tile span {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  opacity: 0.85;
+}
+.mobile-date-tile strong {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+/* Nearby cards */
+.mobile-nearby-card {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8d4;
+  box-shadow: 0 2px 8px rgba(45,90,30,0.05);
+  transition: transform 0.2s ease;
+}
+.mobile-nearby-card:active {
+  transform: scale(0.97);
+}
+
+.mobile-person-bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 44px;
+  border-radius: 12px;
+  color: white;
+}
+.mobile-person-bubble--gold {
+  background: linear-gradient(135deg, #FFDE4E, #FF9D4D);
+}
+.mobile-person-bubble--blue {
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+}
+.mobile-person-bubble--lavender {
+  background: linear-gradient(135deg, #A1CB35, #769826);
+}
+
+/* Saved list */
+.mobile-saved-card {
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8d4;
+  box-shadow: 0 2px 8px rgba(45,90,30,0.05);
+  overflow: hidden;
+}
+
+.mobile-saved-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e2e8d4;
+  transition: background 0.15s;
+}
+.mobile-saved-row:last-child {
+  border-bottom: none;
+}
+.mobile-saved-row:active {
+  background: #f7faf0;
+}
+
+.mobile-saved-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 44px;
+  border-radius: 12px;
+  background: #f7faf0;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.mobile-type-pill {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: #f7faf0;
+  color: #2D5A1E;
+  flex-shrink: 0;
+}
+
+/* Bottom navigation */
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 16px 22px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid #e2e8d4;
+}
+
+.mobile-bottom-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  color: #5a7a3a;
+  transition: color 0.2s;
+}
+.mobile-bottom-link small {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.mobile-bottom-link--active {
+  color: #2D5A1E;
+}
+
+.mobile-add-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  width: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #A1CB35, #769826);
+  color: #2D5A1E;
+  box-shadow: 0 6px 20px rgba(161,203,53,0.4);
+  transition: transform 0.2s;
+  margin-top: -22px;
+}
+.mobile-add-button:active {
+  transform: scale(0.92);
+}

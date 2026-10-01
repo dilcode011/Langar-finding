@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Heart, MessageCircle } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 
 const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/Gjet1eEmideEbH5wxWVzwx';
 
@@ -61,9 +61,7 @@ export function Footer() {
           <p className="text-xs text-white/50 font-medium">
             &copy; {new Date().getFullYear()} Langar Finder. All rights reserved.
           </p>
-          <p className="text-xs text-white/60 flex items-center gap-1.5 font-bold">
-            Made with <Heart className="h-3.5 w-3.5 fill-[#FF9D4D] text-[#FF9D4D]" /> for the community
-          </p>
+
         </div>
       </div>
     </footer>

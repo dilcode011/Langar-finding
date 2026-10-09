@@ -295,64 +295,6 @@ export default function HomePage() {
       </section>
 
       {/* ==========================================
-          TAKE CONTROL OF YOUR LANGAR DISCOVERY
-          ========================================== */}
-      <section className="bg-white py-20 px-4 lg:px-8 border-b border-slate-100">
-        <div className="container mx-auto max-w-6xl">
-          
-          <h2 className="text-4xl md:text-6xl font-extrabold text-[#2D5A1E] tracking-tighter uppercase text-center mb-16">
-            TAKE CONTROL OF YOUR<br />LANGAR DISCOVERY
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            
-            {/* Feature Badge 1 */}
-            <div className="flex items-start gap-4">
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#FFDE4E] text-[#2D5A1E] shadow-sm">
-                <Sparkles className="h-8 w-8 text-[#2D5A1E]" />
-              </div>
-              <div className="pt-2">
-                <h3 className="text-lg font-bold text-[#2D5A1E] leading-snug">
-                  Winner of{' '}
-                  <span className="underline decoration-2 underline-offset-4 decoration-[#FF9D4D] cursor-pointer hover:opacity-80">
-                    Best Community Service Website 2025
-                  </span>
-                </h3>
-              </div>
-            </div>
-
-            {/* Feature Badge 2 */}
-            <div className="flex items-start gap-4">
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#FFDE4E] text-[#2D5A1E] shadow-sm">
-                <BadgeCheck className="h-8 w-8 text-[#2D5A1E]" />
-              </div>
-              <div className="pt-2">
-                <h3 className="text-lg font-bold text-[#2D5A1E] leading-snug">
-                  Regulated & Verified by{' '}
-                  <span className="underline decoration-2 underline-offset-4 decoration-[#FF9D4D] cursor-pointer hover:opacity-80">
-                    Regional Gurudwara Committees
-                  </span>
-                </h3>
-              </div>
-            </div>
-
-            {/* Feature Badge 3 */}
-            <div className="flex items-start gap-4">
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#FFDE4E] text-[#2D5A1E] shadow-sm">
-                <Users className="h-8 w-8 text-[#2D5A1E]" />
-              </div>
-              <div className="pt-2">
-                <h3 className="text-lg font-bold text-[#2D5A1E] leading-snug">
-                  24/7 Live Community Support & Volunteer Network
-                </h3>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ==========================================
           SAVE ON YOUR TRAVELS & PILGRIMAGE SECTION
           ========================================== */}
       <section className="bg-[#F7FAF0] py-20 px-4 lg:px-8 border-b border-[#E2E8D4]">

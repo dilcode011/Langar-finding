@@ -23,7 +23,6 @@ export function Header() {
   const pathname = usePathname();
   const { user, profile, signOut } = useAuth();
   const { lang, setLang, t } = useLanguage();
-  const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
     { href: '/', label: t('nav.home'), icon: null },
@@ -138,7 +137,7 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
-            <div className="flex items-center gap-2">
+            <div className="hidden sm:flex items-center gap-2">
               <Link href="/signin" className="text-sm font-bold text-[#2D5A1E] hover:opacity-80 px-3 py-2 transition-opacity">
                 Log in
               </Link>
@@ -148,57 +147,16 @@ export function Header() {
             </div>
           )}
 
-          <Button
-            variant="ghost"
-            size="icon"
-            className="lg:hidden text-[#2D5A1E] hover:bg-white/20 rounded-full"
-            onClick={() => setMobileOpen(!mobileOpen)}
+          <a
+            href={WHATSAPP_COMMUNITY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="lg:hidden flex items-center justify-center h-10 w-10 text-[#2D5A1E] hover:bg-white/20 rounded-full"
           >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
+            <MessageCircle className="h-5 w-5" />
+          </a>
         </div>
       </div>
-
-      {/* Mobile nav */}
-      {mobileOpen && (
-        <nav className="lg:hidden border-t border-border bg-white animate-fade-in max-h-[calc(100vh-4rem)] overflow-y-auto">
-          <div className="container mx-auto px-4 py-3 flex flex-col gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className={cn(
-                  'px-3 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-secondary flex items-center gap-2',
-                  isActive(link.href) ? 'text-primary-900 bg-secondary' : 'text-foreground/70'
-                )}
-              >
-                {link.icon && <link.icon className="h-4 w-4" />}
-                {link.label}
-              </Link>
-            ))}
-            <a
-              href={WHATSAPP_COMMUNITY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileOpen(false)}
-              className="px-3 py-2.5 text-sm font-medium rounded-lg flex items-center gap-2 bg-[#A1CB35] text-[#2D5A1E] mt-2 font-semibold"
-            >
-              <MessageCircle className="h-4 w-4" />
-              {t('nav.whatsapp')}
-            </a>
-            {!user && (
-              <Link
-                href="/signin"
-                onClick={() => setMobileOpen(false)}
-                className="px-3 py-2.5 text-sm font-medium rounded-lg text-[#2D5A1E] bg-secondary"
-              >
-                {t('nav.signin')}
-              </Link>
-            )}
-          </div>
-        </nav>
-      )}
     </header>
   );
 }

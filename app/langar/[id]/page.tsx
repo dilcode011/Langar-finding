@@ -143,7 +143,8 @@ export default function LangarDetailPage() {
   const handleDirections = async () => {
     if (!langar) return;
     await supabase.rpc('increment_langar_counter', { p_langar_id: langar.id, p_counter: 'directions' });
-    const url = `https://www.google.com/maps/dir/?api=1&destination=${langar.latitude},${langar.longitude}`;
+    const destinationQuery = encodeURIComponent(`${langar.name}, ${langar.address || langar.city}`);
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${destinationQuery}`;
     window.open(url, '_blank');
   };
 
@@ -202,7 +203,8 @@ export default function LangarDetailPage() {
     ? calculateDistance(userLocation.lat, userLocation.lng, langar.latitude, langar.longitude)
     : null;
 
-  const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${langar.latitude},${langar.longitude}`;
+  const destinationQuery = encodeURIComponent(`${langar.name}, ${langar.address || langar.city}`);
+  const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${destinationQuery}`;
 
   return (
     <div className="flex flex-col">

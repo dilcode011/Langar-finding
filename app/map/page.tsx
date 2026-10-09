@@ -48,7 +48,8 @@ export default function MapPage() {
       .from('langars')
       .select('*')
       .eq('status', 'approved')
-      .order('is_verified', { ascending: false });
+      .order('is_verified', { ascending: false })
+      .limit(5000);
 
     if (error) {
       console.error('Error:', error);
@@ -81,6 +82,15 @@ export default function MapPage() {
         (l.city && l.city.toLowerCase().includes(searchQuery.toLowerCase())) ||
         l.address.toLowerCase().includes(searchQuery.toLowerCase())
     )) {
+      return false;
+    }
+
+    // Must have valid coordinates within bounds
+    if (
+      l.latitude == null || l.longitude == null ||
+      l.latitude < -90 || l.latitude > 90 ||
+      l.longitude < -180 || l.longitude > 180
+    ) {
       return false;
     }
 

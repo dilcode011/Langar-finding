@@ -31,7 +31,8 @@ export default function CityPage() {
       .eq('status', 'approved')
       .ilike('city', cityName)
       .order('is_verified', { ascending: false })
-      .order('created_at', { ascending: false });
+      .order('created_at', { ascending: false })
+      .limit(50);
 
     if (error) {
       console.error('Error:', error);

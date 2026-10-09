@@ -11,6 +11,12 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://langarfind.com'),
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
+  themeColor: '#A1CB35',
   title: 'Langar Finder — Discover Verified Gurudwaras & Langar Near You',
   description: 'Find verified Gurudwaras, regular feeders, and historical Gurudwaras across Punjab, Delhi, and Bengal. Community-driven platform for sharing and discovering langar locations.',
   openGraph: {

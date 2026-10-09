@@ -252,7 +252,7 @@ export default function AddLangarPage() {
                 required
               />
             </div>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="space-y-1.5">
                 <Label htmlFor="city">City</Label>
                 <Input id="city" placeholder="e.g. Phagwara" value={city} onChange={(e) => setCity(e.target.value)} />
@@ -313,7 +313,7 @@ export default function AddLangarPage() {
             </div>
 
             {isRecurring ? (
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1.5">
                   <Label>Recurring Type</Label>
                   <Select value={recurringType} onValueChange={setRecurringType}>
@@ -345,7 +345,7 @@ export default function AddLangarPage() {
               </div>
             )}
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="space-y-1.5">
                 <Label htmlFor="startTime">Start Time</Label>
                 <Input id="startTime" type="time" value={startTime} onChange={(e) => setStartTime(e.target.value)} />

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Bell, Bookmark, ChevronRight, Clock3, Heart, Map, MapPin, Plus, Search, Utensils, Users } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Langar } from '@/lib/supabase';
 import { formatTime, getLangarTimingText } from '@/lib/langar-utils';
@@ -20,7 +21,7 @@ type MobileHomeProps = {
 function getGreeting(): string {
   const hour = new Date().getHours();
   if (hour < 12) return 'Good morning';
-  if (hour < 18) return 'Good afternoon';
+  if (hour < 17) return 'Good afternoon';
   return 'Good evening';
 }
 
@@ -34,9 +35,16 @@ export function MobileHome({ langars, loading, searchQuery, setSearchQuery, hand
   const featured = langars[0];
   const nearby = langars.slice(0, 4);
   const saved = langars.slice(1, 4);
+  const [greeting, setGreeting] = useState('Welcome');
+
+  useEffect(() => {
+    setGreeting(getGreeting());
+  }, []);
 
   return (
-    <div className="bg-white min-h-screen pb-28 text-[#2D5A1E]">
+    <div className="mobile-home bg-white min-h-screen pb-28 text-[#2D5A1E]">
+      <div className="mobile-home__glow mobile-home__glow--one" />
+      <div className="mobile-home__glow mobile-home__glow--two" />
       {/* Langar Finder Lime Top Hero Header */}
       <div className="bg-[#A1CB35] px-5 pt-8 pb-10 rounded-b-[36px] shadow-sm">
         <div className="flex items-center justify-between">
@@ -47,7 +55,7 @@ export function MobileHome({ langars, loading, searchQuery, setSearchQuery, hand
             </div>
             <p className="text-xs font-black tracking-widest text-[#2D5A1E]/70 uppercase">LANGAR FINDER</p>
             <h1 className="mt-1 text-3xl font-extrabold tracking-tighter text-[#2D5A1E] leading-none uppercase">
-              {getGreeting()},<br />{displayName}
+              {greeting},<br />{displayName}
             </h1>
           </div>
           <div className="flex items-center gap-2">

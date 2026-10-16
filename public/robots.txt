@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Block utility/private pages from crawlers
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /signin/
+Disallow: /account/
+Disallow: /cart/
+Disallow: /checkout/
+
+# Block search result URLs with filter parameters that create duplicates
+Disallow: /search?filter=
+Disallow: /search?lat=
+Disallow: /search?lng=
+
+# Block any API routes
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://langarfind.com/sitemap.xml

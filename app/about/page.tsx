@@ -9,13 +9,18 @@ import { Button } from '@/components/ui/button';
 export default function AboutPage() {
   return (
     <div className="container mx-auto px-4 lg:px-6 py-8 max-w-3xl">
-      <Link href="/dashboard" className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-4">
-        <ChevronLeft className="h-4 w-4" /> Back to Dashboard
-      </Link>
+      {/* Breadcrumb */}
+      <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground">
+        <ol className="flex items-center gap-1.5">
+          <li><Link href="/" className="hover:underline">Home</Link></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" className="font-semibold">About</li>
+        </ol>
+      </nav>
 
       <div className="flex items-center gap-3 mb-8">
         <div className="flex h-12 w-12 items-center justify-center rounded-xl overflow-hidden shadow-sm">
-          <img src="/logo.jpg" alt="Logo" className="h-full w-full object-cover" />
+          <img src="/logo.jpg" alt="Langar Finder Logo" className="h-full w-full object-cover" />
         </div>
         <div>
           <h1 className="text-2xl font-bold">About Langar Finder</h1>
@@ -30,7 +35,7 @@ export default function AboutPage() {
             Langar Finder is a community-driven website built to connect people with free community meals (langar) at Gurudwaras and other venues. Rooted in the Sikh tradition of <strong>Seva</strong> (selfless service) and <strong>Sangat</strong> (community), langar represents the radical idea that food should be free, available to all, and shared in equality — regardless of caste, religion, gender, or status.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            We built this website to make langar more discoverable. Whether you're traveling, new to a city, or simply looking for a warm meal and community, Langar Finder helps you find free meals near you.
+            We built this website to make langar more discoverable. Whether you&apos;re traveling, new to a city, or simply looking for a warm meal and community, Langar Finder helps you find free meals near you.
           </p>
         </CardContent>
       </Card>
@@ -82,6 +87,13 @@ export default function AboutPage() {
           </div>
         </CardContent>
       </Card>
+
+      <div className="mt-8 pt-6 border-t flex flex-wrap gap-4 text-sm">
+        <Link href="/faq" className="text-muted-foreground hover:text-foreground font-medium">FAQ</Link>
+        <Link href="/contact" className="text-muted-foreground hover:text-foreground font-medium">Contact</Link>
+        <Link href="/privacy" className="text-muted-foreground hover:text-foreground font-medium">Privacy Policy</Link>
+        <Link href="/terms" className="text-muted-foreground hover:text-foreground font-medium">Terms of Use</Link>
+      </div>
     </div>
   );
 }

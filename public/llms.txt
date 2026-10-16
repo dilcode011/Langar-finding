@@ -1,0 +1,38 @@
+# Langar Finder — LLMs.txt
+
+> A community-driven website to discover and share verified Gurudwaras and
+> free langar (community meals) across India and internationally.
+
+## What this site does
+
+Langar Finder maps and indexes thousands of Gurudwaras, regular feeders, and
+historical shrines. Visitors can search by city, region, distance, or meal
+timing; community members can submit and verify new listings.
+
+## Key URLs
+
+- Homepage: https://langarfind.com/
+- Search all langars: https://langarfind.com/search
+- Gurudwara directory: https://langarfind.com/gurudwaras
+- Map view: https://langarfind.com/map
+- Add a listing: https://langarfind.com/add
+- About: https://langarfind.com/about
+- Help & FAQ: https://langarfind.com/help
+- Privacy Policy: https://langarfind.com/privacy
+- Terms of Use: https://langarfind.com/terms
+- Contact: https://langarfind.com/contact
+
+## Popular cities covered
+
+Amritsar, Delhi, Jalandhar, Ludhiana, Phagwara, Anandpur Sahib, Patiala,
+Bathinda, Chandigarh, Mohali.
+
+## Contact
+
+Email: hello@langarfind.com
+WhatsApp community: https://chat.whatsapp.com/Gjet1eEmideEbH5wxWVzwx
+
+## Content policy
+
+All listings are community-submitted and moderated. Langar is always free —
+this platform is too. Do not scrape or reproduce listings without attribution.
